@@ -56,6 +56,34 @@ img {
   flex-basis: calc((100% - 3 * 30px) / 3);
 }
 
+.list-img-thumb {
+  position: relative;
+}
+
+.list-img-overlay {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.list-img-item {
+  margin-top: 27px;
+  margin-bottom: auto;
+}
+
+.list-img-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
 .container {
   width: 1200px;
   padding-left: 15px;
@@ -98,6 +126,7 @@ img {
   height: 44px;
   background-color: #ffffff;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link.footer {
@@ -116,6 +145,7 @@ img {
 
 .social-list-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-list-icon {
@@ -150,6 +180,7 @@ img {
 
 .logo-header {
   color: #000000;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo.footer {
@@ -158,6 +189,7 @@ img {
 
 .logo-footer {
   color: #ffffff;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-header:hover,
@@ -203,6 +235,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link {
@@ -248,6 +281,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link .connection:hover,
@@ -262,6 +296,7 @@ img {
 .contact-link-icon {
   margin-right: 10px;
   fill: var(--primary-text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link .connection:hover .contact-link-icon,
@@ -435,15 +470,15 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 106px;
-  height: 60px; */
   width: 170px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-list-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-list-link:hover .client-list-icon,
@@ -456,7 +491,6 @@ img {
 .footer-container {
   display: flex;
   align-items: baseline;
-  /* gap: 70px; */
 }
 
 .adress-item {
@@ -497,6 +531,7 @@ img {
   font-size: 14px;
   line-height: 1.71;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer.bcfooter .connection-footer:hover,
@@ -505,8 +540,6 @@ img {
 }
 
 .bcfooter {
-  /* max-width: 1600px; */
-  /* height: 252px; */
   margin-left: auto;
   margin-right: auto;
   background-color: #2f303a;
@@ -531,6 +564,10 @@ img {
 
   border-radius: 4px;
   border: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.primery {
@@ -627,9 +664,19 @@ img {
   line-height: 1.88;
 }
 
+.robots-description-text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+}
+
 .robots-link {
+  position: ;
   display: block;
   text-decoration: none;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .robots-link:hover,
@@ -637,6 +684,28 @@ img {
   background: #ffffff;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.robots-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.robots-item-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.robots-link:hover .robots-item-overlay,
+.robots-link:focus .robots-item-overlay {
+  transform: translatey(0);
 }
 
 /* Modal */
@@ -648,7 +717,8 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms linear, visibility 250ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
